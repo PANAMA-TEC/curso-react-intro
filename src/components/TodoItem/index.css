@@ -1,0 +1,55 @@
+.TodoItem {
+    display: flex;
+    /* border-style: solid; */
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    min-height: 140px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
+}
+
+.closeButton {
+    position: relative;
+    top: -50%;
+    right: 0px;
+    /* border-style: solid; */
+    
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    border-style: solid;
+}
+
+.iconCheck {
+    /* border-style: solid; */
+    width: 20%;
+    height: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+}
+
+.iconCheck-red {
+    /* border-style: solid; */
+    color:blue;
+}
+
+.iconCheck-green {
+    /* border-style: solid; */
+    color:green;
+}
+
+.taskName-completed {
+    text-decoration: line-through;
+}
