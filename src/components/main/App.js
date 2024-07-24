@@ -4,7 +4,7 @@ import { TodoCounter } from '../TodoCounter';
 import { TodoSearch } from '../TodoSearch';
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
-import { CreateTodoButton } from '../CreateTodoButton';
+import { CreateTodo } from '../CreateTodo';
 
 
 const defaultTodos = [
@@ -18,8 +18,8 @@ const defaultTodos = [
 
 const App = () => {
 
-  const [ searchValue, setSearchValue ] = React.useState('');
-  const [ todo, setTodo ] = React.useState(defaultTodos);
+  const [ searchValue, setSearchValue ] = useState('');
+  const [ todo, setTodo ] = useState(defaultTodos);
 
   
   const completedTodo = todo.filter( todo => !!todo.Completed ).length;
@@ -89,7 +89,7 @@ const App = () => {
           }
         </TodoList>
         
-        <CreateTodoButton/>
+        <CreateTodo/>
         
       </div>
     </div>

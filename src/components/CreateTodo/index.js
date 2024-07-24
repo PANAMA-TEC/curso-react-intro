@@ -1,6 +1,6 @@
 import './index.css';
 
-const CreateTodoButton = () => {
+const CreateTodo = () => {
   return(
    
     <button className='buttonAgregar' onClick={ evento }>
@@ -14,4 +14,4 @@ const evento = (event) => {
   console.log(event.target);
 }
 
-export { CreateTodoButton };
+export { CreateTodo };

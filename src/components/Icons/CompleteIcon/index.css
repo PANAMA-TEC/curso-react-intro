@@ -6,6 +6,9 @@
   align-items: center;
   justify-content: center;
   
+
+  
+ 
 }
 
 .App-logo {
@@ -55,8 +58,8 @@
 }
 
 .contenedorPrincipal{
-
-  min-width: 600px;
+ 
+  width: 100%;
   /* border-style: solid; */
   padding: 50px 100px;
   display: flex;
@@ -70,6 +73,7 @@
   border-style: solid;
   border-color: white;
   border-width: 2px;
+
   
 }
 
