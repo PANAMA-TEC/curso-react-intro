@@ -6,7 +6,10 @@ import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { CreateTodo } from '../CreateTodo';
 
-
+/**
+ *
+ * 
+ * 
 const defaultTodos = [
   { text: ' cebolla', Completed: true },
   { text: 'tomar el curso de React', Completed: false },
@@ -16,11 +19,24 @@ const defaultTodos = [
   { text: 'Usar estados derivados ', Completed: true }
 ]
 
-const App = () => {
+localStorage.setItem("TODOS_V1", JSON.stringify(defaultTodos));
 
+*/
+
+const App = () =>{
+
+  let localStorageTodos = localStorage.getItem('TODOS_V1');
+  let parseTodos = "";
+
+  if(!localStorageTodos){
+    localStorage.setItem('TODOS_V1', JSON.stringify([]));
+    parseTodos = [];
+  }else {
+    parseTodos = JSON.parse(localStorageTodos);
+  }
+  
   const [ searchValue, setSearchValue ] = useState('');
-  const [ todo, setTodo ] = useState(defaultTodos);
-
+  const [ todo, setTodo ] = useState(parseTodos);
   
   const completedTodo = todo.filter( todo => !!todo.Completed ).length;
   const totalToDo = todo.length;
@@ -33,6 +49,14 @@ const App = () => {
     return todoText.includes(searchText);
 
   });
+
+
+  const saveTodos = (newTodos) =>{
+
+    localStorage.removeItem("TODOS_V1");
+    localStorage.setItem("TODOS_V1", JSON.stringify(newTodos));
+
+  }
 
   const toggleToDo = (text) => {
    
@@ -50,6 +74,7 @@ const App = () => {
     }
     // inyectamos todo el nuevo array
     setTodo(newTodos);
+    saveTodos(newTodos);
   }
 
   const deleteTodo = (text) => {
@@ -64,13 +89,11 @@ const App = () => {
     newTodos.splice(todoIndex, 1);
     // inyectamos todo el nuevo array
     setTodo(newTodos);
+    saveTodos(newTodos);
   }
 
-  if ( totalToDo == completedTodo )  { alert("Se completaron todas las tareas") }
+  //if ( totalToDo == completedTodo )  { alert("Se completaron todas las tareas") }
   
-
-  //console.log('los usuarios buscan todos de: ' + searchValue)
-
   return (
    
     <div className='App'>
