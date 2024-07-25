@@ -19,6 +19,15 @@
   }
 }
 
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .App-header {
   background-color: #233553;
   min-height: 100vh;
@@ -34,16 +43,10 @@
   color: #97ca3f;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
 
 .contenedorInferior{
+
   display: flex;
   height: 100%;
   width: 100%;

@@ -1,3 +1,5 @@
+import './index.css'
+
 const DeleteIcon = ({onDelete}) => {
   return(
     <span className='closeButton'> 
