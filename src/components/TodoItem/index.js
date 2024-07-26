@@ -1,6 +1,6 @@
 import './index.css';
-import { CompleteIcon } from '../Icons/CompleteIcon';
-import { DeleteIcon } from '../Icons/DeleteIcon';
+import { CompleteIcon } from '../../Icons/iconManager';
+import { DeleteIcon } from '../../Icons/DeleteIcon';
 
 const TodoItem = ( {mensaje, completed, onCompleted, onDelete} ) => {
   return (
