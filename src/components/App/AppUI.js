@@ -7,14 +7,16 @@ import { LoadingsTodo } from '../LoadingsTodos';
 import { ErrorsTodo } from '../ErrorsTodos';
 import { EmptyTodos } from '../EmptysTodos';
 import { TodoContext } from '../TodoContext';
+import { Modal } from '../../Modal';
 import React from 'react';
 
 const AppUI = ( )=>{
     //Esto es utilizado para pasar los props de una manera más limpia a la aplicación.
-    const { loading, searchedTodo, error, toggleToDo, deleteTodo } = React.useContext(TodoContext);  
+    const { loading, searchedTodo, error, toggleToDo, deleteTodo, openModal } = React.useContext(TodoContext);  
 
     return ( 
         <div className='App'>
+          
           <div className='contenedorPrincipal'>
         
             <TodoCounter />
@@ -35,6 +37,9 @@ const AppUI = ( )=>{
             <CreateTodo/>
 
           </div>
+
+          { openModal ? <Modal>La funcionalidad de agregar TODOs.</Modal> : "" }
+
         </div>
     );
 }
