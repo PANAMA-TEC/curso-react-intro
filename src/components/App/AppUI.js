@@ -6,15 +6,20 @@ import { CreateTodo } from '../CreateTodo';
 import { LoadingsTodo } from '../LoadingsTodos';
 import { ErrorsTodo } from '../ErrorsTodos';
 import { EmptyTodos } from '../EmptysTodos';
+import { TodoContext } from '../TodoContext';
+import React from 'react';
 
-const AppUI = ( { totalToDo, completedTodo, searchValue, setSearchValue, searchedTodo, toggleToDo, deleteTodo, loading, error} )=>{
+const AppUI = ( )=>{
+    //Esto es utilizado para pasar los props de una manera más limpia a la aplicación.
+    const { loading, searchedTodo, error, toggleToDo, deleteTodo } = React.useContext(TodoContext);  
+
     return ( 
         <div className='App'>
           <div className='contenedorPrincipal'>
         
-            <TodoCounter total={totalToDo} completed={completedTodo}/>
-            <TodoSearch searchValue={ searchValue }  setSearchValue={setSearchValue} />
-        
+            <TodoCounter />
+            <TodoSearch />
+          
             <TodoList>
               { loading ? <LoadingsTodo/>  : "" }
               { error ? <ErrorsTodo/>  : "" }
@@ -24,12 +29,11 @@ const AppUI = ( { totalToDo, completedTodo, searchValue, setSearchValue, searche
                     onCompleted = { ()=>{ toggleToDo(todo.text) }}
                     onDelete = { () => { deleteTodo(todo.text); }} 
                   /> 
-                )) 
-              }
+              ))}
             </TodoList>
-            
+                    
             <CreateTodo/>
-            
+
           </div>
         </div>
     );

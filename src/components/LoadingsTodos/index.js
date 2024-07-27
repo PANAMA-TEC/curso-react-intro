@@ -2,7 +2,7 @@ import './index.css';
 
 const LoadingsTodo = () => {
   return(
-    <div class='spinner'></div>
+    <div className={'spinner'}></div>
   );
 }
 export { LoadingsTodo };
