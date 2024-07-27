@@ -25,7 +25,7 @@ localStorage.setItem(itemName, JSON.stringify(defaultTodos));
 const App = () =>{
 
   const [ searchValue, setSearchValue ] = useState('');
-  const [ todo, saveTodos ] = useLocalStorage("TODO_V1", [] );
+  const { item:todo, saveItems:saveTodos, loading, error } = useLocalStorage("TODO_V1", [] );
   
   const completedTodo = todo.filter( todo => !!todo.Completed ).length;
   const totalToDo = todo.length;
@@ -77,7 +77,8 @@ const App = () =>{
   
   return(
     <AppUI 
-
+      loading={loading}
+      error={error}
       completedTodo={completedTodo} 
       searchedTodo={searchedTodo} 
       totalToDo={totalToDo} 
