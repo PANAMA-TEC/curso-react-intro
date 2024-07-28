@@ -26,7 +26,8 @@ const TodoForm = (  ) => {
         <form className='formularioTodo' onSubmit={ onSubmit }>
             
             <label className='titulos_formularioTodo'> Escribe un nuevo Todo </label>
-            <textarea onChange={(Event) => Event(setValue(Event.target.value))} placeholder='Cortar cebolla para el almuerzo' className='textArea_formularioTodo'/> 
+            <textarea onChange={ (Event) => Event( setValue(Event.target.value) ) } 
+            placeholder='Cortar cebolla para el almuerzo' className='textArea_formularioTodo'/> 
             
             <div className='contenedorInf_formulario'> 
                 <button className='btn_formularioTodo' onClick={ onCancel }>Cancelar</button>
