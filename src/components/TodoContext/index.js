@@ -54,6 +54,19 @@ const TodoProvider =( {children} )=> {
         
         saveTodos(newTodos);
     }
+    const addTodo = (text) => {
+        
+        
+        // copiar un array dentro de otro
+        const newTodos = [...todo];
+        // buscar el indice en donde aparece el texto
+
+        let data =  { text: text, Completed: false };
+        
+        newTodos.push(data)
+
+        saveTodos(newTodos);
+    }
 
     return(
         
@@ -61,7 +74,7 @@ const TodoProvider =( {children} )=> {
             totalToDo, completedTodo, searchValue, 
             searchedTodo, loading, error, openModal, 
             setOpenModal, setSearchValue, toggleToDo, 
-            deleteTodo
+            deleteTodo, addTodo
         } }>
             {children}
         </TodoContext.Provider>
