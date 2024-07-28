@@ -9,6 +9,7 @@ import { EmptyTodos } from '../EmptysTodos';
 import { TodoContext } from '../TodoContext';
 import { Modal } from '../../Modal';
 import React from 'react';
+import { TodoForm } from '../TodoForm';
 
 const AppUI = ( )=>{
     //Esto es utilizado para pasar los props de una manera más limpia a la aplicación.
@@ -38,7 +39,7 @@ const AppUI = ( )=>{
 
           </div>
 
-          { openModal ? <Modal>La funcionalidad de agregar TODOs.</Modal> : "" }
+          { openModal ? <Modal> <TodoForm></TodoForm>  </Modal>: "" }
 
         </div>
     );
