@@ -20,13 +20,11 @@ const TodoForm = (  ) => {
         addTodo(value);
     }
 
-
-
     return (
         <form className='formularioTodo' onSubmit={ onSubmit }>
             
             <label className='titulos_formularioTodo'> Escribe un nuevo Todo </label>
-            <textarea onChange={ (Event) => Event( setValue(Event.target.value) ) } 
+            <textarea onChange={ (event) => ( setValue(event.target.value) ) } 
             placeholder='Cortar cebolla para el almuerzo' className='textArea_formularioTodo'/> 
             
             <div className='contenedorInf_formulario'> 
@@ -40,3 +38,5 @@ const TodoForm = (  ) => {
 }
 
 export { TodoForm };
+
+
